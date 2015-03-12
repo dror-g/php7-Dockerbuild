@@ -72,4 +72,4 @@ RUN make -j4 && make install
 #CMD cd $PHP_DIR; tar czPf /mnt/out/php7-apache.tar.gz `find . -type f -print` /etc/apache2/mods-available/php7.load /usr/lib/apache2/modules/libphp7.so
 #CMD tar -czPf /mnt/out/php7-apache.tar.gz -C /usr/local/  php /etc/apache2/mods-available/php7.load /usr/lib/apache2/modules/libphp7.so
 #CMD tar -czf /mnt/out/php7-apache.tar.gz -C /usr/local/  php /etc/apache2/mods-available/php7.load /usr/lib/apache2/modules/libphp7.so
-CMD tar -czf /mnt/out/php7-apache.tar.gz -C /usr/local/  php 
+CMD tar -czf /mnt/out/php7-i386-$(date +%d%m%y).tar.gz -C /usr/local/  php 
