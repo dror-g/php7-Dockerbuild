@@ -50,6 +50,7 @@ RUN ./buildconf && ./configure \
 --enable-fpm \ 
 --enable-intl \ 
 --enable-soap \ 
+--without-pear \
 --with-apxs2=/usr/bin/apxs2 \ 
 --with-libdir=/lib/x86_64-linux-gnu  
 
