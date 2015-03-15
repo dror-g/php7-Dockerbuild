@@ -51,6 +51,7 @@ RUN ./buildconf && ./configure \
 --enable-intl \ 
 --enable-soap \ 
 --with-apxs2=/usr/bin/apxs2 \ 
+--without-pear \
 --with-libdir=/lib/i386-linux-gnu 
 
 RUN make -j4 && make install
