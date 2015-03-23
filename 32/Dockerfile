@@ -4,11 +4,10 @@ FROM build:32
 RUN git clone --depth=1 https://github.com/php/php-src.git /usr/local/src/php
 
 WORKDIR /usr/local/src/php
-ENV PHP_DIR /usr/local/php
+ENV PHP_DIR /usr/local/php7
 
 RUN ln -s /usr/include/i386-linux-gnu/gmp.h /usr/include/gmp.h 
 
-#RUN ./buildconf && ./configure --prefix=$PHP_DIR --with-config-file-path=$PHP_DIR --with-config-file-scan-dir=$PHP_DIR/conf.d --with-apxs2=/usr/bin/apxs2 --with-libdir=/lib/x86_64-linux-gnu --without-pear --enable-fpm
 
 RUN ./buildconf && ./configure \
 --prefix=$PHP_DIR \ 
@@ -73,4 +72,7 @@ RUN make -j4 && make install
 #CMD cd $PHP_DIR; tar czPf /mnt/out/php7-apache.tar.gz `find . -type f -print` /etc/apache2/mods-available/php7.load /usr/lib/apache2/modules/libphp7.so
 #CMD tar -czPf /mnt/out/php7-apache.tar.gz -C /usr/local/  php /etc/apache2/mods-available/php7.load /usr/lib/apache2/modules/libphp7.so
 #CMD tar -czf /mnt/out/php7-apache.tar.gz -C /usr/local/  php /etc/apache2/mods-available/php7.load /usr/lib/apache2/modules/libphp7.so
-CMD tar -czf /mnt/out/php7-i386-$(date +%d%m%y).tar.gz -C /usr/local/  php 
+#CMD tar -czf /mnt/out/php7-i386-$(date +%d%m%y).tar.gz -C /usr/local/  php 
+
+RUN cp /etc/apache2/mods-available/php7.load /usr/lib/apache2/modules/libphp7.so /usr/local/php7
+CMD tar czPf /mnt/out/php7-i386-$(date +%d%m%y).tar.gz /usr/local/php7 
