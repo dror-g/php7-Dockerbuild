@@ -21,10 +21,11 @@ yum install -y \
     libmcrypt-devel \
     t1lib-devel \ 
     libXpm-devel \
-    libpng12-devel \ 
+    libpng-devel \ 
     libjpeg-turbo-devel\
     bzip2-devel \
     openssl-libs \
+    libicu-devel 
 
 ln -s /usr/lib64/libbz2.so.1 /usr/lib64/libbz2.so.1.0
 ln -s /usr/lib64/libjpeg.so.62.1.0 /usr/lib64/libjpeg.so.8

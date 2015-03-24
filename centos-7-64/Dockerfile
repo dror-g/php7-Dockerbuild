@@ -1,4 +1,4 @@
-FROM build:64
+FROM build:centos7-64
     
 
 RUN git clone --depth=1 https://github.com/php/php-src.git /usr/local/src/php
@@ -6,7 +6,7 @@ RUN git clone --depth=1 https://github.com/php/php-src.git /usr/local/src/php
 WORKDIR /usr/local/src/php
 ENV PHP_DIR /usr/local/php7
 
-RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h 
+#RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h 
 
 #RUN ./buildconf && ./configure --prefix=$PHP_DIR --with-config-file-path=$PHP_DIR --with-config-file-scan-dir=$PHP_DIR/conf.d --with-apxs2=/usr/bin/apxs2 --with-libdir=/lib/x86_64-linux-gnu --without-pear --enable-fpm
 
@@ -26,7 +26,6 @@ RUN ./buildconf && ./configure \
 --enable-sysvshm \ 
 --enable-wddx \ 
 --with-curl \ 
---with-mcrypt \ 
 --with-iconv \ 
 --with-gmp=/usr \ 
 --with-pspell \ 
@@ -40,7 +39,7 @@ RUN ./buildconf && ./configure \
 --enable-gd-native-ttf \ 
 --enable-gd-jis-conv \ 
 --with-openssl \ 
---with-mysql=/usr \ 
+--with-mysql \ 
 --with-pdo-mysql=/usr \ 
 --with-gettext=/usr \ 
 --with-zlib=/usr \ 
@@ -51,8 +50,10 @@ RUN ./buildconf && ./configure \
 --enable-intl \ 
 --enable-soap \ 
 --without-pear \
---with-apxs2=/usr/bin/apxs2 \ 
---with-libdir=/lib/x86_64-linux-gnu  
+--with-apxs2 
+
+#--with-libdir=/lib/x86_64-linux-gnu  
+#--with-mcrypt \ 
 
 RUN make -j4 && make install
 
@@ -76,5 +77,6 @@ RUN make -j4 && make install
 #CMD tar -czf /mnt/out/php7-x86_64-$(date +%d%m%y).tar.gz -C /usr/local/  php 
 #CMD tar czPf /mnt/out/php7-x86_64-$(date +%d%m%y).tar.gz $PHP_DIR /etc/apache2/mods-available/php7.load /usr/lib/apache2/modules/libphp7.so
 
-RUN cp /etc/apache2/mods-available/php7.load /usr/lib/apache2/modules/libphp7.so /usr/local/php7
-CMD tar czPf /mnt/out/php7-deb-x86_64-$(date +%d%m%y).tar.gz /usr/local/php7 
+#RUN cp /etc/apache2/mods-available/php7.load /usr/lib/apache2/modules/libphp7.so /usr/local/php7
+RUN cp /etc/httpd/modules/libphp7.so /usr/local/php7
+CMD tar czPf /mnt/out/php7-centos7-x86_64-$(date +%d%m%y).tar.gz /usr/local/php7 
