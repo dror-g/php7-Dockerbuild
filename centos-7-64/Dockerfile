@@ -79,4 +79,6 @@ RUN make -j4 && make install
 
 #RUN cp /etc/apache2/mods-available/php7.load /usr/lib/apache2/modules/libphp7.so /usr/local/php7
 RUN cp /etc/httpd/modules/libphp7.so /usr/local/php7
-CMD tar czPf /mnt/out/php7-centos7-x86_64-$(date +%d%m%y).tar.gz /usr/local/php7 
+
+#CMD tar czPf /mnt/out/php7-centos7-x86_64-$(date +%d%m%y).tar.gz /usr/local/php7 
+CMD tar czPf /mnt/out/php-7.0-$(date +%d%m%y)-RHEL-x86_64.tar.gz /usr/local/php7 

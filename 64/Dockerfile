@@ -77,4 +77,6 @@ RUN make -j4 && make install
 #CMD tar czPf /mnt/out/php7-x86_64-$(date +%d%m%y).tar.gz $PHP_DIR /etc/apache2/mods-available/php7.load /usr/lib/apache2/modules/libphp7.so
 
 RUN cp /etc/apache2/mods-available/php7.load /usr/lib/apache2/modules/libphp7.so /usr/local/php7
-CMD tar czPf /mnt/out/php7-deb-x86_64-$(date +%d%m%y).tar.gz /usr/local/php7 
+
+#CMD tar czPf /mnt/out/php7-deb-x86_64-$(date +%d%m%y).tar.gz /usr/local/php7 
+CMD tar czPf /mnt/out/php-7.0-$(date +%d%m%y)-DEB-x86_64.tar.gz /usr/local/php7 
