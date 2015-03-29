@@ -12,8 +12,8 @@ RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h
 
 RUN ./buildconf && ./configure \
 --prefix=$PHP_DIR \ 
---with-config-file-path=$PHP_DIR \ 
---with-config-file-scan-dir=$PHP_DIR/conf.d \ 
+--with-config-file-path=$PHP_DIR/etc \ 
+--with-config-file-scan-dir=$PHP_DIR/etc/conf.d \ 
 --enable-mbstring \ 
 --enable-zip \ 
 --enable-bcmath \ 
