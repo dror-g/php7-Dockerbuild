@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
     git \
+    libgd-dev \
     libbz2-dev \
     libcurl4-openssl-dev \
     libmcrypt-dev \
