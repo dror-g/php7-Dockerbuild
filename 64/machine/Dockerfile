@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:14.04
 
 RUN apt-get update && apt-get install -y \
     apache2-mpm-prefork \
@@ -15,13 +15,13 @@ RUN apt-get update && apt-get install -y \
     libmcrypt-dev \
     libxml2-dev \
     re2c \
-    libjpeg-dev \
+    #libjpeg-dev \
+    libjpeg62-dev \
     libpng12-dev \
     libxpm-dev \
     libpcre3-dev \
     libfreetype6-dev \
     libmysqlclient-dev \
-    libt1-dev \
     libgd2-xpm-dev \
     libgmp-dev \
     libsasl2-dev \

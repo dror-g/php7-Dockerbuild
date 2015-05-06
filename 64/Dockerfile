@@ -36,7 +36,6 @@ RUN ./buildconf && ./configure \
 --with-zlib-dir=/usr \ 
 --with-xpm-dir=/usr \ 
 --with-freetype-dir=/usr \ 
---with-t1lib=/usr \ 
 --enable-gd-native-ttf \ 
 --enable-gd-jis-conv \ 
 --with-openssl \ 
