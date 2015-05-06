@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
     git \
-    libgd-dev \
+    #libgd-dev \
     libbz2-dev \
     libcurl4-openssl-dev \
     libmcrypt-dev \
@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y \
     libpcre3-dev \
     libfreetype6-dev \
     libmysqlclient-dev \
-    libgd2-xpm-dev \
+    #libgd2-xpm-dev \
     libgmp-dev \
     libsasl2-dev \
     libmhash-dev \
