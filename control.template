@@ -3,7 +3,7 @@ Version: 1.0-1
 Section: base
 Priority: optional
 Architecture: amd64
-Depends: libcurl4-openssl-dev, libmcrypt-dev, libxml2-dev, libjpeg-dev, libfreetype6-dev, libmysqlclient-dev, libgmp-dev, libpspell-dev, libicu-dev, librecode-dev, libxpm4 
+Depends: libcurl4-openssl-dev, libmcrypt-dev, libxml2-dev, libjpeg62, libfreetype6-dev, libmysqlclient-dev, libgmp-dev, libpspell-dev, libicu-dev, librecode-dev, libxpm4 
 Maintainer: Dror Gensler <dror.g@zend.com>
 Description: PHP7 nightly build compiled by Zend Technologies
  Please note this package is generated nightly
