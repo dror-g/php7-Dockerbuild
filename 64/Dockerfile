@@ -1,7 +1,7 @@
 FROM build:64
     
 
-RUN git clone --depth=1 https://github.com/php/php-src.git /usr/local/src/php
+RUN git clone -b PHP-7.0 --depth=1 https://github.com/php/php-src.git /usr/local/src/php
 
 WORKDIR /usr/local/src/php
 ENV PHP_DIR /usr/local/php7
