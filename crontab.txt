@@ -1,0 +1,2 @@
+0 22 * * * /usr/local/sbin/build.sh
+0 19 * * * /usr/local/sbin/cleanup.sh
